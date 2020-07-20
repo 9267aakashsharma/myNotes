@@ -4,7 +4,6 @@ import { CreateNote } from "./components";
 const Dashboard = () => {
   return (
     <div>
-      <p>Hello</p>
       <CreateNote />
     </div>
   );

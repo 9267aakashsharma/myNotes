@@ -1,5 +1,6 @@
 @import "./fonts";
 @import "./variables";
+@import "./mixins";
 
 * {
   margin: 0;
@@ -16,7 +17,7 @@ body {
 
 body {
   font-size: $font-size;
-  font-family: "Graphik", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $text;
   text-rendering: optimizeLegibility;
   background-color: $background;
