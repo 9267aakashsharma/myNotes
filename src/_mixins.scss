@@ -1,0 +1,14 @@
+$yAxis: 4rem;
+$xAxis: 2rem;
+
+@mixin ContainerPadding {
+  padding: $yAxis $xAxis;
+}
+
+@mixin ContainerMargin {
+  margin: $yAxis $xAxis;
+}
+
+@mixin SidebarPadding {
+  margin: $yAxis $xAxis;
+}
