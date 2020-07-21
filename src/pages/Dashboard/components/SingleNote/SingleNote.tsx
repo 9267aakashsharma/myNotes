@@ -14,7 +14,7 @@ const SingleNote = ({ title, content }: Note) => {
       <h2>
         {title}
         <span>
-          <img src={Pushpin} />
+          <img src={Pushpin} alt="Push pin" />
         </span>
       </h2>
       <div className="content">

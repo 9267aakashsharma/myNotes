@@ -9,27 +9,35 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
   saveNote: (note: Note) => void;
 }
 
+const initalNoteProperties: Note = {
+  title: "",
+  content: "",
+  checked: false,
+  pinned: false,
+  color: "#ffffff",
+};
+
 const CreateNote = (props: Props) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [noteProperties, setNoteProperties] = useState(initalNoteProperties);
   const [disableButton, setDisableButton] = useState(true);
 
   useEffect(() => {
-    if (title === "" && content === "") {
+    if (noteProperties.title === "" && noteProperties.content === "") {
       setDisableButton(true);
     } else {
       setDisableButton(false);
     }
-  }, [title, content]);
+  }, [noteProperties]);
+
   return (
     <div className="payO-createNote">
       <div className="title">
         <input
           placeholder="Title"
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            setTitle(event.target.value);
+            setNoteProperties({ ...noteProperties, title: event.target.value });
           }}
-          value={title}
+          value={noteProperties.title}
         />
         <div>
           <img src={Pushpin} alt="pin item" />
@@ -40,18 +48,20 @@ const CreateNote = (props: Props) => {
           placeholder="Take a note..."
           rows={1}
           onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
-            setContent(event.target.value);
+            setNoteProperties({
+              ...noteProperties,
+              content: event.target.value,
+            });
           }}
-          value={content}
+          value={noteProperties.content}
         />
       </div>
       <div className="options">
         <NoteOptions />
         <button
           onClick={() => {
-            props.saveNote({ title, content });
-            setContent("");
-            setTitle("");
+            props.saveNote(noteProperties);
+            setNoteProperties({ ...noteProperties, title: "", content: "" });
           }}
           disabled={disableButton}
         >
