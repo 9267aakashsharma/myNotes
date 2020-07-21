@@ -22,7 +22,7 @@ div.payO-createNote {
       color: $text;
       border: none;
       outline: none;
-      width: 90%;
+      width: 85%;
 
       &::placeholder {
         color: $placeholder;
@@ -34,7 +34,7 @@ div.payO-createNote {
       height: 48px;
       align-items: center;
 
-      svg {
+      img {
         display: block;
         margin: 0 auto;
         width: 24px;

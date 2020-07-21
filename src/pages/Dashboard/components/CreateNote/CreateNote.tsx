@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CreateNote.scss";
-import TextareaAutosize from "react-textarea-autosize";
+import TextareaAutosize from "react-autosize-textarea";
 import { Note } from "../../../../models/note";
 import { NoteOptions } from "../../../../shared/components";
-import { ReactComponent as PushPin } from "../../../../assets/svg/push_pin.svg";
+const Pushpin = require("../../../../assets/svg/push_pin.svg") as string;
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
   saveNote: (note: Note) => void;
@@ -12,6 +12,15 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 const CreateNote = (props: Props) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [disableButton, setDisableButton] = useState(true);
+
+  useEffect(() => {
+    if (title === "" && content === "") {
+      setDisableButton(true);
+    } else {
+      setDisableButton(false);
+    }
+  }, [title, content]);
   return (
     <div className="payO-createNote">
       <div className="title">
@@ -23,13 +32,13 @@ const CreateNote = (props: Props) => {
           value={title}
         />
         <div>
-          <PushPin />
+          <img src={Pushpin} alt="pin item" />
         </div>
       </div>
       <div className="content">
         <TextareaAutosize
           placeholder="Take a note..."
-          minRows={1}
+          rows={1}
           onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
             setContent(event.target.value);
           }}
@@ -44,6 +53,7 @@ const CreateNote = (props: Props) => {
             setContent("");
             setTitle("");
           }}
+          disabled={disableButton}
         >
           Save
         </button>
