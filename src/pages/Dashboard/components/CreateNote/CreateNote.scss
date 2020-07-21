@@ -11,13 +11,44 @@ div.payO-createNote {
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
     0 2px 6px 2px rgba(60, 64, 67, 0.149);
 
-  input {
-    border: none;
-    outline: none;
-    width: 100%;
+  div.title {
+    position: relative;
+    padding: 0 0.5rem;
+    display: flex;
+    input {
+      font-family: "ProductSans", serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: $text;
+      border: none;
+      outline: none;
+      width: 90%;
+
+      &::placeholder {
+        color: $placeholder;
+      }
+    }
+    div {
+      display: flex;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+
+      svg {
+        display: block;
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: $gray;
+        border-radius: 50%;
+      }
+    }
   }
 
-  div.title {
+  div.content {
     position: relative;
     padding: 0 0.5rem;
     display: flex;
@@ -26,7 +57,9 @@ div.payO-createNote {
       outline: none;
       width: 400px;
       line-height: 1.5rem;
+      font-family: "Roboto", sans-serif;
       font-size: 0.8rem;
+      letter-spacing: 0.5px;
       border: 0;
       box-sizing: border-box;
       display: block;
@@ -36,18 +69,26 @@ div.payO-createNote {
       padding: 0;
 
       &::placeholder {
-        font-weight: 600;
+        font-family: "Roboto", sans-serif;
+        color: $placeholder;
+        font-weight: 550;
       }
     }
+  }
 
-    svg {
-      vertical-align: baseline;
-      justify-content: baseline;
+  div.options {
+    position: relative;
+    padding: 0 0.5rem;
+    display: flex;
+    button {
+      padding: 0 1rem;
+      outline: none;
+      border: none;
+      background-color: $background;
       font-size: 1rem;
-      fill: $background;
-      background-color: $text;
-      margin: auto 0.25rem;
-      padding: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      cursor: pointer;
     }
   }
 }
