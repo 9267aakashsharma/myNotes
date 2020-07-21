@@ -1,0 +1,18 @@
+@import "../../../../mixins";
+@import "../../../../variables";
+@import "../../../../fonts";
+
+div.payO-note {
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+  border: 1px solid $gray;
+  border-radius: 5px;
+  text-align: left;
+  h2 {
+    padding: 4px 16px 12px 16px;
+  }
+  div.content {
+    padding: 4px 16px 12px 16px;
+  }
+}
