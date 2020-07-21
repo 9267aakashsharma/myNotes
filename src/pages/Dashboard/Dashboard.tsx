@@ -3,14 +3,12 @@ import { Note } from "../../models/note";
 import { CreateNote, SingleNote } from "./components";
 import { Row, Grid, Col } from "react-flexbox-grid";
 
-const notes: Note[] = [];
+const initialNotes: Note[] = [];
 
 const Dashboard = () => {
-  const [savedNotes, setSavedNotes] = useState(notes);
+  const [savedNotes, setSavedNotes] = useState(initialNotes);
   const saveNote = (note: Note) => {
-    const newNote = [...notes];
-    newNote.push(note);
-    setSavedNotes(newNote);
+    setSavedNotes([...savedNotes, note]);
   };
   return (
     <div className="payO-dashboard">
