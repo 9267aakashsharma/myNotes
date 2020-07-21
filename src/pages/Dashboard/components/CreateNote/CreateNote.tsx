@@ -3,13 +3,16 @@ import "./CreateNote.scss";
 import TextareaAutosize from "react-autosize-textarea";
 import { Note } from "../../../../models/note";
 import { NoteOptions } from "../../../../shared/components";
+import { v4 as uuid } from "uuid";
 const Pushpin = require("../../../../assets/svg/push_pin.svg") as string;
+const PushpinBlack = require("../../../../assets/svg/push_pin-black.svg") as string;
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
   saveNote: (note: Note) => void;
 }
 
 const initalNoteProperties: Note = {
+  id: uuid(),
   title: "",
   content: "",
   checked: false,
@@ -29,6 +32,15 @@ const CreateNote = (props: Props) => {
     }
   }, [noteProperties]);
 
+  const togglePinned = () => {
+    const changePin = !noteProperties.pinned;
+    setNoteProperties({ ...noteProperties, pinned: changePin });
+  };
+
+  const unSetProperties = () => {
+    setNoteProperties(initalNoteProperties);
+  };
+
   return (
     <div className="payO-createNote">
       <div className="title">
@@ -39,8 +51,12 @@ const CreateNote = (props: Props) => {
           }}
           value={noteProperties.title}
         />
-        <div>
-          <img src={Pushpin} alt="pin item" />
+        <div onClick={togglePinned}>
+          {noteProperties.pinned ? (
+            <img src={PushpinBlack} alt="unpin item" />
+          ) : (
+            <img src={Pushpin} alt="pin item" />
+          )}
         </div>
       </div>
       <div className="content">
@@ -61,7 +77,7 @@ const CreateNote = (props: Props) => {
         <button
           onClick={() => {
             props.saveNote(noteProperties);
-            setNoteProperties({ ...noteProperties, title: "", content: "" });
+            unSetProperties();
           }}
           disabled={disableButton}
         >
