@@ -52,6 +52,14 @@ div.payO-note {
     p {
       white-space: pre-wrap;
     }
+    a {
+      text-decoration: none;
+      color: $accent;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
   div.noteoptions {
     opacity: 0;
