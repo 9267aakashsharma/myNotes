@@ -10,14 +10,14 @@ const PushpinBlack = require("../../../../assets/svg/push_pin-black.svg") as str
 type Props = {
   note: Note;
   togglePinned: (id: string) => void;
+  onUploadImage: (id: string, fileUrl: string) => void;
 };
 
 const images: string[] = [];
 
 const SingleNote = (props: Props) => {
-  const [imageFile, setImageFile] = useState(images);
   const handleFile = (file: string) => {
-    setImageFile([...imageFile, file]);
+    props.onUploadImage(props.note.id, file);
   };
 
   return (
@@ -42,9 +42,6 @@ const SingleNote = (props: Props) => {
       <div className="content">
         <Linkify>{props.note.content}</Linkify>
         {props.note.imageUrl.map((image: string, index: number) => {
-          return <img src={image} alt={image} key={index} />;
-        })}
-        {imageFile.map((image: string, index: number) => {
           return <img src={image} alt={image} key={index} />;
         })}
       </div>
