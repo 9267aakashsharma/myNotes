@@ -1,0 +1,15 @@
+@import "../../mixins";
+@import "../../fonts";
+@import "../../variables";
+
+div.payO-dashboard {
+  div.pinned-notes,
+  div.unpinned-notes {
+    margin: 10rem auto;
+    padding: 0 1rem;
+
+    p {
+      text-align: left;
+    }
+  }
+}
