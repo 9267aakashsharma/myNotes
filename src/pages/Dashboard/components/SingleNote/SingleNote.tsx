@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Note } from "../../../../models/note";
 import "./SingleNote.scss";
 import { NoteOptions } from "../../../../shared/components";
@@ -12,8 +12,6 @@ type Props = {
   togglePinned: (id: string) => void;
   onUploadImage: (id: string, fileUrl: string) => void;
 };
-
-const images: string[] = [];
 
 const SingleNote = (props: Props) => {
   const handleFile = (file: string) => {

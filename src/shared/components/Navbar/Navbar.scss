@@ -7,10 +7,42 @@ div.payO-navbar {
   left: 0;
   top: 0;
   width: 100%;
-  margin-bottom: 500px;
   background-color: $background;
   z-index: 1;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.07);
   nav {
+    display: flex;
+    padding: 0.25rem 0.75rem;
     width: 100%;
+    img {
+      width: 100px;
+      height: auto;
+    }
+    div {
+      width: 40%;
+      margin: auto;
+      display: flex;
+      padding: 0.25rem 0.5rem;
+      border-radius: 5px;
+      background-color: rgb(241, 243, 244);
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+      input {
+        height: 2rem;
+        width: 90%;
+        padding: 0 0.25rem;
+        font-family: "Roboto", sans-serif;
+        border: none;
+        background-color: transparent;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
   }
 }
