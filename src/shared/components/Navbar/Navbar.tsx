@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
+import { MdSearch } from "react-icons/md";
 import "./Navbar.scss";
 const payO_logo = require("../../../assets/logos/logo.png");
 
@@ -17,13 +18,16 @@ const Navbar = (props: Props) => {
     <div className="payO-navbar">
       <nav>
         <img src={payO_logo} alt="logo" />
-        <DebounceInput
-          minLength={2}
-          debounceTimeout={300}
-          placeholder="Search Notes"
-          onChange={(event) => setSearchText(event.target.value)}
-          value={searchText}
-        />
+        <div>
+          <MdSearch />
+          <DebounceInput
+            minLength={2}
+            debounceTimeout={300}
+            placeholder="Search Notes"
+            onChange={(event) => setSearchText(event.target.value)}
+            value={searchText}
+          />
+        </div>
       </nav>
     </div>
   );
