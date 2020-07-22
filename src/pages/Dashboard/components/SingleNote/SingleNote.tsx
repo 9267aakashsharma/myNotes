@@ -38,7 +38,9 @@ const SingleNote = (props: Props) => {
         </span>
       </h2>
       <div className="content">
-        <Linkify>{props.note.content}</Linkify>
+        <Linkify>
+          <p>{props.note.content}</p>
+        </Linkify>
         {props.note.imageUrl.map((image: string, index: number) => {
           return <img src={image} alt={image} key={index} />;
         })}

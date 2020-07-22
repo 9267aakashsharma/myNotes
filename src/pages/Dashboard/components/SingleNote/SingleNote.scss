@@ -55,6 +55,9 @@ div.payO-note {
     a {
       text-decoration: none;
       color: $accent;
+      p {
+        white-space: pre-wrap;
+      }
     }
     img {
       width: 100%;
