@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-To install the dependencies, browse to `client` directory in terminal and write:
+To install the dependencies, in terminal and write:
 
 ### `yarn`
 
