@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Extracting files
+
+Right click on zip file and extract it to a new folder
+
 ## Available Scripts
 
 To install the dependencies, in terminal and write:
