@@ -1,0 +1,16 @@
+@import "../../../fonts";
+@import "../../../mixins";
+@import "../../../variables";
+
+div.payO-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 500px;
+  background-color: $background;
+  z-index: 1;
+  nav {
+    width: 100%;
+  }
+}
