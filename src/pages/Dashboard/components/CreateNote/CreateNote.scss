@@ -51,7 +51,6 @@ div.payO-createNote {
   div.content {
     position: relative;
     padding: 0 0.5rem;
-    display: flex;
 
     textarea {
       outline: none;
@@ -73,6 +72,10 @@ div.payO-createNote {
         color: $placeholder;
         font-weight: 550;
       }
+    }
+    img {
+      width: 240px;
+      height: auto;
     }
   }
 

@@ -12,9 +12,10 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
 }
 
 const initalNoteProperties: Note = {
-  id: uuid(),
+  id: "",
   title: "",
   content: "",
+  imageUrl: [],
   checked: false,
   pinned: false,
   color: "#ffffff",
@@ -35,6 +36,13 @@ const CreateNote = (props: Props) => {
   const togglePinned = () => {
     const changePin = !noteProperties.pinned;
     setNoteProperties({ ...noteProperties, pinned: changePin });
+  };
+
+  const handleFile = (file: string) => {
+    setNoteProperties({
+      ...noteProperties,
+      imageUrl: [...noteProperties.imageUrl, file],
+    });
   };
 
   const unSetProperties = () => {
@@ -71,12 +79,15 @@ const CreateNote = (props: Props) => {
           }}
           value={noteProperties.content}
         />
+        {noteProperties.imageUrl.map((image: string, index: number) => {
+          return <img src={image} alt={image} key={index} />;
+        })}
       </div>
       <div className="options">
-        <NoteOptions />
+        <NoteOptions handleFile={handleFile} />
         <button
           onClick={() => {
-            props.saveNote(noteProperties);
+            props.saveNote({ ...noteProperties, id: uuid() });
             unSetProperties();
           }}
           disabled={disableButton}
