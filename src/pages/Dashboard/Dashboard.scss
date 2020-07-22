@@ -3,6 +3,10 @@
 @import "../../variables";
 
 div.payO-dashboard {
+  position: relative;
+  .payO-grid {
+    margin-top: 200px;
+  }
   div.pinned-notes,
   div.unpinned-notes {
     margin: 10rem auto;
