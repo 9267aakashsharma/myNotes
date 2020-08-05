@@ -67,6 +67,7 @@ const CreateNote = (props: Props) => {
           )}
         </div>
       </div>
+
       <div className="content">
         <TextareaAutosize
           placeholder="Take a note..."

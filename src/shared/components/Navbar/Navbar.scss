@@ -11,14 +11,17 @@ div.payO-navbar {
   z-index: 1;
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+
   nav {
     display: flex;
     padding: 0.25rem 0.75rem;
     width: 100%;
+
     img {
-      width: 100px;
+      width: 60px;
       height: auto;
     }
+
     div {
       width: 40%;
       margin: auto;
@@ -26,10 +29,12 @@ div.payO-navbar {
       padding: 0.25rem 0.5rem;
       border-radius: 5px;
       background-color: rgb(241, 243, 244);
+
       svg {
         height: 2rem;
         width: 2rem;
       }
+
       input {
         height: 2rem;
         width: 90%;

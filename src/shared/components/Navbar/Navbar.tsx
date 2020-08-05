@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import { MdSearch } from "react-icons/md";
 import "./Navbar.scss";
-const payO_logo = require("../../../assets/logos/logo.png");
+const myNotes_logo = require("../../../assets/logos/myNotes.png");
 
 type Props = {
   getSearchText: (searchText: string) => void;
@@ -17,7 +17,7 @@ const Navbar = (props: Props) => {
   return (
     <div className="payO-navbar">
       <nav>
-        <img src={payO_logo} alt="logo" />
+        <img src={myNotes_logo} alt="logo" />
         <div>
           <MdSearch />
           <DebounceInput
